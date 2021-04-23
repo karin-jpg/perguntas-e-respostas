@@ -5,11 +5,16 @@ app.set("view engine", "ejs");
 
 app.get("/", (req, res) => {
     //o render automaticamente acessa a pasta view, nao necessário coloca-la no caminho
-    res.render("index.ejs");
+    var nome = "Karín";
+    var linguagem = "Javascript";
+    res.render("index.ejs", {
+        nome: nome, 
+        lang: linguagem,
+        idade: 21
+    });
 });
 
 app.get("/home", (req, res) => {
-    //o render automaticamente acessa a pasta view, nao necessário coloca-la no caminho
     res.render("home.ejs");
 });
 

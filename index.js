@@ -3,10 +3,10 @@ const app = express();
 
 app.set("view engine", "ejs");
 
-app.get("/", (req, res) => {
+app.get("/:nome/:lang", (req, res) => {
     //o render automaticamente acessa a pasta view, nao necessário coloca-la no caminho
-    var nome = "Karín";
-    var linguagem = "Javascript";
+    var nome = req.params.nome;
+    var linguagem = req.params.lang;
     res.render("index.ejs", {
         nome: nome, 
         lang: linguagem,

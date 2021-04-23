@@ -12,5 +12,11 @@
     <p><%= nome%></p>
     <p><%= lang%></p>
     <p><%= idade%></p>
+    <%if(!msg){ %>
+        <h3>Mensagem de erro</h3>
+    <% }else{ %>
+        <h3>Sem erro</h3>
+    <% }%>
+    
 </body>
 </html>

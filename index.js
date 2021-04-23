@@ -8,11 +8,28 @@ app.get("/:nome/:lang", (req, res) => {
     var nome = req.params.nome;
     var linguagem = req.params.lang;
     var exibirMsg = true;
+
+    var produtos = [
+        {
+            nome:"salgado",
+            valor:3.14
+        },
+        {
+            nome:"Doce",
+            valor:2
+        },
+        {
+            nome:"Sorvete",
+            valor:4.5
+        },
+    ]
+
     res.render("index.ejs", {
         nome: nome, 
         lang: linguagem,
         idade: 21,
-        msg: exibirMsg
+        msg: exibirMsg,
+        produtos: produtos
     });
 });
 

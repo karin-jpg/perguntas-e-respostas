@@ -20,9 +20,13 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
 app.get("/", (req, res) => {
-    //o render automaticamente acessa a pasta view, nao necessário coloca-la no caminho
-
-    res.render("index.ejs");
+    Pergunta.findAll({raw: true}).then(perguntas => {
+        res.render("index.ejs", {
+            perguntas: perguntas
+        });
+    });
+    
+    
 });
 
 app.get("/perguntar", (req, res) => {

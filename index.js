@@ -20,13 +20,13 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
 app.get("/", (req, res) => {
-    Pergunta.findAll({raw: true}).then(perguntas => {
+    Pergunta.findAll({raw: true, order: [
+        ['id','desc']
+    ]}).then(perguntas => {
         res.render("index.ejs", {
             perguntas: perguntas
         });
     });
-    
-    
 });
 
 app.get("/perguntar", (req, res) => {

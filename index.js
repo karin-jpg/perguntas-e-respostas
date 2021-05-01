@@ -17,8 +17,8 @@ connection
 app.set("view engine", "ejs");
 app.use(express.static('public'));
 
-app.use(bodyParser.urlencoded({extended: false}));
-app.use(bodyParser.json());
+app.use(express.urlencoded({extended: false}));
+app.use(express.json());
 
 app.get("/", (req, res) => {
     Pergunta.findAll({raw: true, order: [
